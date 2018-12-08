@@ -7,7 +7,7 @@ def dist(point1, point2):
         (point1[0] - point2[0]) * (point1[0] - point2[0]) + (point1[1] - point2[1]) * (point1[1] - point2[1]))
 
 
-def kmeans(k: int, poi: dict, data_points: list, patience: int = 100):
+def kmeans(k: int, poi: dict, data_points: list, patience: int = 10):
     addresses = []
     k_points = []  # long/lat of the k points
     min_lat = 999999999

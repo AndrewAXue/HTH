@@ -105,3 +105,5 @@ venv.bak/
 
 # raw json files are too large
 raw_json_data/
+
+*.swp
