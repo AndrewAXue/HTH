@@ -25,9 +25,7 @@ def kmeans(k: int, poi: dict):
     for i in range(k):
         k_points.append((randint(min_long, max_long), randint(min_lat, max_lat)))
 
-    max_delta = 1000
-    while max_delta > 100:
-        max_delta = 0
+    for i in range(100):
         for point in addresses:
             idx = 0  # which k cluster is it closest to
             min_dist = 100000
@@ -43,7 +41,6 @@ def kmeans(k: int, poi: dict):
             for addy in addresses:
                 if addy[2] == idx:
                     num_points += 1
-                    max_delta += dist(addy, value)
                     sumx += addy[1]
                     sumy += addy[0]
             value[0] = sumx / num_points
