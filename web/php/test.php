@@ -3,12 +3,16 @@
 
 
 
-$array = array('k_val'=>$_POST['kval'],'school'=>$_POST['schoolpriority'],'hospital'=>$_POST['hospitalpriority']);
+$array = array('k_num'=>$_POST["k_val"],'poi'=> array('school'=>$_POST["schoolpriority"],'hospital'=>$_POST["hospitalpriority"]));
 $craftedmessage = json_encode($array);
-$response = send("172.22.46.26:8080",$craftedmessage);
+$response = send("172.22.46.26:5216",$craftedmessage);
 $resArr = array();
 $resArr = json_decode($response);
-echo "<pre>"; print_r($resArr); echo "</pre>";
+//echo "<pre>"; print_r($resArr); echo "</pre>";
+$resArrEncoded = json_encode($resArr);
+echo $resArrEncoded;
+header("Location: https://kaveenk.me/phpjstest.php?json=".$resArrEncoded);
+
 
 function send($url,$message)
 {

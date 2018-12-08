@@ -1,5 +1,9 @@
 <?php
-$test = "";
+if (!empty($_GET["json"])) {
+    echo $_GET["json"];
+    return;
+
+}
 
 ?>
 <!DOCTYPE html>
@@ -66,8 +70,8 @@ $test = "";
             </div>
             <div><label for="k_value">K Value</label>
 
-                <input type="number" id="kval" name="kval"
-                       min="10" max="100"></div>
+                <input type="number" id="kval" name="k_val"
+                       min="1" max="10"></div>
             <input type="submit" value="Submit">
     </div>
 
