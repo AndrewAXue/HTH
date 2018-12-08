@@ -1,3 +1,7 @@
+<?php
+$test = "";
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,30 +75,29 @@
 </center>
 </form>
 
-<?php
-$test = "test";
-echo "test";
-
-?>
 <div id="map"></div>
 <script>
     var map;
 
-
-
     function initMap() {
-        var myLatLng = {lat: -25.363, lng: 131.044};
+        var hamilton = {lat: 43.2557, lng: -79.8711};
 
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 4,
-            center: myLatLng
+            zoom: 11,
+            center: hamilton
         });
 
-        var marker = new google.maps.Marker({
-            position: myLatLng,
-            map: map,
-            title: "test"
-        });
+
+        for (i = 0; i< 5;i++)
+        {
+
+
+            var marker = new google.maps.Marker({
+                position: hamilton,
+                map: map,
+                title: "test"
+            });
+        }
     }
 
 
