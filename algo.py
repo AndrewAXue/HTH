@@ -12,9 +12,9 @@ def kmeans(k: int, poi: dict):
     addresses = []
     k_points = []  # long/lat of the k points
     min_lat = 999999999
-    max_lat = 0
+    max_lat = -999999999
     min_long = 999999999
-    max_long = 0
+    max_long = -999999999
     for point in data_points:
         for i in range(poi[point[5]]):  # adds more for more weight
             addresses.append((point[1], point[2], 0))
