@@ -1,6 +1,8 @@
 from collections import namedtuple
 import json
 import requests
+from clean_data import cleaning
+from algo import kmeans
 
 institution_map = {'home': 'https://opendata.arcgis.com/datasets/ac6fc684043341f6b1d6298c146a0bcf_1.geojson',
                 'school': 'https://opendata.arcgis.com/datasets/cccae6f029334927856da6e20a50561f_19.geojson',
@@ -23,8 +25,8 @@ def get_data(institution_type):
     for x in data['features']:
         x = x['properties']
         data_points.append(data_point(institution_type,
-                                   x['LONGITUDE'],
-                                   x['LATITUDE']))
+                                   float(x['LONGITUDE']),
+                                   float(x['LATITUDE'])))
     return data_points
 
 
@@ -35,4 +37,4 @@ def process_query(k_value: int, poi: dict):
         if institution_type in institution_map:
             data_points.extend(get_data(institution_type))
     return kmeans(k_value, poi, data_points)
-
+process_query(3, {'home': 1})
