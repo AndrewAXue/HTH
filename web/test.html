@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <meta charset="utf-8">
+    <title>TITLE</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+
+
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /*Optional: Makes the sample page fill the window.*/
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+<center><h4>Optimized Selection</h4></center>
+
+<center>
+    <div class="row">
+        <form method="GET" action="php/test.php">
+
+            <div>
+                <input type="range" id="schoolpriority" name="schoolpriority"
+                       min="0" max="10">
+                <label for="schoolpriority">School Priority</label>
+            </div>
+            <div>
+                <input type="range" id="hospitalpriority" name="hospitalpriority"
+                       min="0" max="10">
+                <label for="hospitalpriority">Hospital Priority</label>
+            </div>
+            <div><label for="k_value">K Value</label>
+
+                <input type="number" id="kval" name="kval"
+                       min="10" max="100"></div>
+            <input type="submit" value="Submit">
+    </div>
+
+
+</center>
+</form>
+
+
+<div id="map"></div>
+<script>
+    var map;
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 8
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAhFU8SCQEF1LBtl0rt1O0JadwXGFKEUI&callback=initMap"
+        async defer></script>
+
+</body>
+</html>
