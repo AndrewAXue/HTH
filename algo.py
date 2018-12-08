@@ -1,4 +1,4 @@
-from random import randint
+from random import uniform
 import math
 
 
@@ -7,7 +7,7 @@ def dist(point1, point2):
         (point1[0] - point2[0]) * (point1[0] - point2[0]) + (point1[1] - point2[1]) * (point1[1] - point2[1]))
 
 
-def kmeans(k: int, poi: dict, data_points: list):
+def kmeans(k: int, poi: dict, data_points: list, patience: int = 100):
     addresses = []
     k_points = []  # long/lat of the k points
     min_lat = 999999999
@@ -15,16 +15,16 @@ def kmeans(k: int, poi: dict, data_points: list):
     min_long = 999999999
     max_long = -999999999
     for point in data_points:
-        for i in range(poi[point[5]]):  # adds more for more weight
-            addresses.append((point[1], point[2], 0))
-            min_lat = min(min_lat, point[2])
-            max_lat = max(max_lat, point[2])
-            min_long = min(min_long, point[1])
-            max_long = max(max_long, point[1])
+        for i in range(poi[point.institution]):  # adds more for more weight
+            addresses.append([point.longitude, point.latitude, 0])
+            min_lat = min(min_lat, point.latitude)
+            max_lat = max(max_lat, point.latitude)
+            min_long = min(min_long, point.longitude)
+            max_long = max(max_long, point.longitude)
     for i in range(k):
-        k_points.append((randint(min_long, max_long), randint(min_lat, max_lat)))
-
-    for i in range(100):
+        k_points.append([uniform(min_long, max_long), uniform(min_lat, max_lat)])
+    for i in range(patience):
+        print(f'current k points {k_points}')
         for point in addresses:
             idx = 0  # which k cluster is it closest to
             min_dist = 100000
@@ -42,6 +42,6 @@ def kmeans(k: int, poi: dict, data_points: list):
                     num_points += 1
                     sumx += addy[1]
                     sumy += addy[0]
-            value[0] = sumx / num_points
-            value[1] = sumy / num_points
+            value[0] = sumy / num_points
+            value[1] = sumx / num_points
     return k_points
