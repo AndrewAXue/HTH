@@ -14,4 +14,4 @@ data_points = []
 for data_point in data['features']:
   data_point = data_point['properties']
   data_points.append(address(data_point['OBJECTID'], data_point['LONGITUDE'], data_point['LATITUDE'], data_point['FULL_STREET_NAME'], data_point['POSTAL_CODE']))
-import pdb; pdb.set_trace()
+#import pdb; pdb.set_trace()
