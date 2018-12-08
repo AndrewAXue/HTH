@@ -45,4 +45,4 @@ def kmeans(k: int, poi: dict):
                     sumy += addy[0]
             value[0] = sumx / num_points
             value[1] = sumy / num_points
-
+    return k_points
