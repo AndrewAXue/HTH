@@ -1,4 +1,3 @@
-from address_reader import data_points
 from random import randint
 import math
 
@@ -8,7 +7,7 @@ def dist(point1, point2):
         (point1[0] - point2[0]) * (point1[0] - point2[0]) + (point1[1] - point2[1]) * (point1[1] - point2[1]))
 
 
-def kmeans(k: int, poi: dict):
+def kmeans(k: int, poi: dict, data_points: list):
     addresses = []
     k_points = []  # long/lat of the k points
     min_lat = 999999999
