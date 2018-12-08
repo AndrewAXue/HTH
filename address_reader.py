@@ -37,4 +37,3 @@ def process_query(k_value: int, poi: dict):
         if institution_type in institution_map:
             data_points.extend(get_data(institution_type))
     return kmeans(k_value, poi, data_points)
-process_query(3, {'home': 1})
