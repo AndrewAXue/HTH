@@ -11,7 +11,8 @@ institution_map = {'home': 'https://opendata.arcgis.com/datasets/ac6fc684043341f
                'museums': 'https://opendata.arcgis.com/datasets/6728810fb847489985d4b735502205a0_2.geojson',
                'golf_courses': 'https://opendata.arcgis.com/datasets/7b46f5eabbe0496fb168860ddc22fa35_14.geojson',
                'parks': 'https://opendata.arcgis.com/datasets/4f1b554e743b423f9574e7a3ca814cce_6.geojson',
-               'community_centres': 'https://opendata.arcgis.com/datasets/272667665de646768db14e9fa1676405_11.geojson'}
+               'community_centres': 'https://opendata.arcgis.com/datasets/272667665de646768db14e9fa1676405_11.geojson',
+                'tourism_poi': 'https://opendata.arcgis.com/datasets/e09cca59a8584cc28e7879bd6b0ce7f4_0.geojson'}
 
 data_point = namedtuple('data_point', ['institution', 'longitude', 'latitude'])
 
