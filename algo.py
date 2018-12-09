@@ -10,6 +10,7 @@ def dist(point1, point2):
 def kmeans(k: int, poi: dict, data_points: list, patience: int = 20):
     addresses = []
     k_points = []  # long/lat of the k points
+    prev_pop = []
     min_lat = 999999999
     max_lat = -999999999
     min_long = 999999999
@@ -27,7 +28,7 @@ def kmeans(k: int, poi: dict, data_points: list, patience: int = 20):
     #    if k == i: break
     #    k_points.append([init_point.longitude, init_point.latitude])
     for i in range(patience):
-        print(f'current k points {k_points}')
+        #print(f'current k points {k_points}')
         worst_point_ind = 0
         worst_point_dist = 0
         number_distribution = []
@@ -39,7 +40,7 @@ def kmeans(k: int, poi: dict, data_points: list, patience: int = 20):
                     min_dist = dist(point, value)
                     idx = index
             if min_dist > worst_point_dist:
-                worst_point_ind = index
+                worst_point_ind = idx
             point[2] = idx
         for idx, value in enumerate(k_points):
             sumx = 0
@@ -57,5 +58,7 @@ def kmeans(k: int, poi: dict, data_points: list, patience: int = 20):
             else:
                 value[0] = sumy / num_points
                 value[1] = sumx / num_points
+        if number_distribution == prev_pop: break
+        prev_pop = number_distribution
         print(number_distribution)
     return k_points
