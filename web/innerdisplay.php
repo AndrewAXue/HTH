@@ -103,7 +103,7 @@ if (!empty($_GET["json"])) {
                 map: map,
                 title: "test",
                 icon: {
-                    url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                    url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
                 }
 
             });
