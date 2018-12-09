@@ -51,7 +51,7 @@ if (!empty($_GET["json"])) {
     <div class="row">
         <div class="four columns" style="margin-top: 3%">
             <center><h4><b>Location Optimizer</b></h4>
-                <form method="GET" action="php/test.php">
+                <form method="GET" action="php/getpoints.php">
 
                     <div>
                         <label for="schoolpriority">School Priority</label>
@@ -104,7 +104,7 @@ if (!empty($_GET["json"])) {
                     Show Libraries: <input type="checkbox" name="showLibraries" id="showlibraries"
                                            value="true" <?php if ($_GET["showLibraries"] == "true") {
                         echo "checked";
-                    } ?> >
+                    } ?> ><br>
                     Show Community Centres: <input type="checkbox" name="showCommunityCentres" id="showcommunitycentres"
                                            value="true" <?php if ($_GET["showCommunityCentres"] == "true") {
                         echo "checked";
@@ -120,9 +120,9 @@ if (!empty($_GET["json"])) {
 
             if ($displaying == true) {
                 $url = "https://kaveenk.me/hth/innerdisplay.php?json=" . $coordinates . "&showHospitals=" . $showHospitals . "&showSchools=" . $showSchools . "&showLibraries=" . $showLibraries."&showCommunityCentres=".$showCommunityCentres;
-                echo "<iframe width='820' height='600' src='" . $url . "'</iframe>";
+                echo "<iframe width='820' height='590' src='" . $url . "'</iframe>";
             } else {
-                echo "<iframe width='820' height='600' src='https://kaveenk.me/hth/innerdisplay.php'</iframe>";
+                echo "<iframe width='820' height='590' src='https://kaveenk.me/hth/innerdisplay.php'</iframe>";
             }
             ?>
         </div>
