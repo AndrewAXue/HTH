@@ -24,10 +24,10 @@ if (!empty($_GET["json"])) {
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="One Page Corporate HTML Template">
     <meta name="author" content="">
-    <link rel="icon" href="https://arizonachristian.edu/wp-content/uploads/2017/06/logo-placeholder.png">
+    <link rel="icon" href="https://i.imgur.com/ho4gBzL.png">
 
     <!-- Title -->
-    <title>NAME - SLOGAN</title>
+    <title>CalKulocation - Location Optimization</title>
 
     <!-- Necessary CSS Files -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">	 	<!-- Google Font -->
@@ -59,8 +59,8 @@ if (!empty($_GET["json"])) {
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-3">
-                        <div class="logo"><a href="#"><img height="50"
-                                                           src="https://360taxsolutions.com/wp-content/uploads/2017/11/placeholder-sample-logo.png"
+                        <div class="logo"><a href="#"><img height="35" width="200"
+                                                           src="https://i.imgur.com/1TSRkGp.png"
                                                            alt="logo"></a></div>
                         <div id="menu-icon"><span></span><span></span><span></span></div>
                         <div class="clear"></div>
@@ -83,9 +83,8 @@ if (!empty($_GET["json"])) {
 
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="wow fadeInDown">Location Optimization</h1>
-                <p class="wow fadeInDown">Find the perfect location(s) given your requrements. Please enter your
-                    constraints below</p>
+                <h1 class="wow fadeInDown">CalKulocation</h1>
+                <p class="wow fadeInDown">Find your perfect location. CalKulocation helps business owners, city planners, tourists, and home owners to use the city of Hamilton's urban data to help them plan their new venture.</p>
                 <br>
 
             </div>
@@ -132,11 +131,11 @@ if (!empty($_GET["json"])) {
 
 
                             <div>
-                                <label for="librarypriority">Library Priority</label>
+                                <label id="lplabel" for="librarypriority">Library Priority</label>
                                 <input style="width: 100%;" value= <?php
                                 echo (int)$_GET["librarypriority"];
                                 ?> type="range" id="librarypriority" name="librarypriority"
-                                       min="0" max="10">
+                                       min="0" max="10" onchange="updateTextInput(this.value);">
 
                             </div>
                             <div>
@@ -178,14 +177,14 @@ if (!empty($_GET["json"])) {
                                 } ?> >
                                 <br>
                                 Show Entertainment: <input type="checkbox" name="showTourismPOI" id="showtourismpoi"
-                                                               value="true" <?php if ($_GET["showTourismPOI"] == "true") {
+                                                           value="true" <?php if ($_GET["showTourismPOI"] == "true") {
                                     echo "checked";
                                 } ?> >
 
                             </div>
                             <br>
                         </div>
-                            <input class="btn2" type="submit" value="Get Locations">
+                        <input class="btn2" type="submit" value="Get Locations">
             </center>
         </form>
 
@@ -219,65 +218,37 @@ if (!empty($_GET["json"])) {
         <div class="row">
             <div class="col-lg-12">
                 <div class="heading">
-                    <span>features</span>
-                    <h2>Best features ever</h2>
+                    <span>Our Algorithm</span>
+                    <h2>How do you use it?</h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-6 module">
                 <div class="f-box wow fadeInUp" data-wow-duration="1s">
-                    <div class="f-img"><img src="images/icon1.png" alt="f1"></div>
-                    <a href="#">Friendly Admin</a>
-                    <p>Lorem Ipsum is simply dummy text the printing and typeseing industry Lorem Ipsum has
-                        been standard.</p>
+                    <div class="f-img"><img src="images/icon3.png" alt="f1"></div>
+                    <a href="#">1: Pick the number of locations</a>
+                    <p>Your number of locations will be the “K Value” for our program. So, the amount of different locations of your franchises, potential homes, or tourism spots you would like to consider.</p>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-6 module">
                 <div class="f-box wow fadeInUp" data-wow-duration="2s">
                     <div class="f-img"><img src="images/icon2.png" alt="f2"></div>
-                    <a href="#">Well Documented</a>
-                    <p>Lorem Ipsum is simply dummy text the printing and typeseing industry Lorem Ipsum has
-                        been standard.</p>
+                    <a href="#">2: Change your priorities</a>
+                    <p>Change the weights on each point of interest to reflect how much each will influence your decision. Home owner with children? Go ahead and increase the weight on schools and recreational centres. Visiting the city? Up the weight on tourism spots. Everything is catered to your individual experience.</p>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-6 module">
                 <div class="f-box wow fadeInUp" data-wow-duration="3s">
-                    <div class="f-img"><img src="images/icon3.png" alt="f3"></div>
-                    <a href="#">Highly Customizable</a>
-                    <p>Lorem Ipsum is simply dummy text the printing and typeseing industry Lorem Ipsum has
-                        been standard.</p>
+                    <div class="f-img"><img src="images/icon6.png" alt="f3"></div>
+                    <a href="#">3: Inspect your results</a>
+                    <p>Take a look at your results. The blue markers are your optimal spots. Feel free to play around with our other visualization tools, to see where any of the points of interest are (and their respective info cards), walking distances, and much more.</p>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-6 module">
-                <div class="f-box wow fadeInUp" data-wow-duration="3s">
-                    <div class="f-img"><img src="images/icon4.png" alt="f4"></div>
-                    <a href="#">Free Download</a>
-                    <p>Lorem Ipsum is simply dummy text the printing and typeseing industry Lorem Ipsum has
-                        been standard.</p>
-                </div>
-            </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-6 module">
-                <div class="f-box wow fadeInUp" data-wow-duration="3s">
-                    <div class="f-img"><img src="images/icon5.png" alt="f5"></div>
-                    <a href="#">Responsive Design</a>
-                    <p>Lorem Ipsum is simply dummy text the printing and typeseing industry Lorem Ipsum has
-                        been standard.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-6 module">
-                <div class="f-box wow fadeInUp" data-wow-duration="3s">
-                    <div class="f-img"><img src="images/icon6.png" alt="f6"></div>
-                    <a href="#">Secure</a>
-                    <p>Lorem Ipsum is simply dummy text the printing and typeseing industry Lorem Ipsum has
-                        been standard.</p>
-                </div>
-            </div>
 
 
         </div>
@@ -337,6 +308,17 @@ if (!empty($_GET["json"])) {
 <script src="js/retina.min.js"></script>                  <!-- Retina js -->
 
 <script>
+
+    function updateTextInput(val) {
+        document.getElementById('lplabel').value=val;
+    }
+
+</script>
+
+<script>
+    function updateTextInput(val) {
+        document.getElementById('lplabel').value=val;
+    }
     $(document).ready(function () {
 
         //Screenshot in details slider ==============================================
