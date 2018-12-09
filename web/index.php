@@ -22,7 +22,7 @@ if (!empty($_GET["json"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="One Page Corporate HTML Template">
+    <meta name="description" content="Your one stop to finding your optimal location, for whatever need. We aid business owners, home buyers, city planners, or even tourists, with the capacity for much more!">
     <meta name="author" content="">
     <link rel="icon" href="https://i.imgur.com/ho4gBzL.png">
 
@@ -83,7 +83,7 @@ if (!empty($_GET["json"])) {
 
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="wow fadeInDown">CalKulocation</h1>
+                <h1 class="wow fadeInDown">Your Ideal Location Starts Here</h1>
                 <p class="wow fadeInDown">Find your perfect location. CalKulocation helps business owners, city planners, tourists, and home owners to use the city of Hamilton's urban data to help them plan their new venture.</p>
                 <br>
 
@@ -157,7 +157,7 @@ if (!empty($_GET["json"])) {
                                     <input type="number" default=1 value= <?php
                                     echo (int)$_GET["k_val"];
                                     ?> id="kval" name="k_val"
-                                           min="1" max="10"></div>
+                                           min="1" max="200"></div>
 
                                 Show Hospitals: <input type="checkbox" name="showHospitals" id="showhospitals"
                                                        value="true" <?php if ($_GET["showHospitals"] == "true") {
