@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3d7a8b8-9b6b-4554-b591-4a3501f90189" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/phpjsdisplaytest.php" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/web/php/test.php" afterPath="$PROJECT_DIR$/web/php/test.php" />
       <change beforePath="$PROJECT_DIR$/web/phpjstest.php" afterPath="$PROJECT_DIR$/web/phpjstest.php" />
     </list>
@@ -17,8 +19,8 @@
       <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="97" column="5" lean-forward="true" selection-start-line="84" selection-start-column="4" selection-end-line="97" selection-end-column="5" />
+            <state relative-caret-position="1746">
+              <caret line="97" column="5" lean-forward="false" selection-start-line="84" selection-start-column="4" selection-end-line="97" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -37,8 +39,8 @@
       <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/php/test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+            <state relative-caret-position="144">
+              <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -47,22 +49,39 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="46" column="25" lean-forward="true" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
+            <state relative-caret-position="195">
+              <caret line="46" column="25" lean-forward="false" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="phpjstest.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="phpjstest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/phpjstest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="68" column="32" lean-forward="false" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
-              <folding>
-                <marker date="1544311502790" expanded="true" signature="99:152" ph="..." />
-                <marker date="1544311502790" expanded="true" signature="106:152" ph="..." />
-              </folding>
+            <state relative-caret-position="1458">
+              <caret line="81" column="36" lean-forward="true" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="phpjsdisplaytest.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/phpjsdisplaytest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="32" column="58" lean-forward="true" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test2.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/php/test2.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -100,8 +119,9 @@
         <option value="$PROJECT_DIR$/web/test.html" />
         <option value="$PROJECT_DIR$/web/index.html" />
         <option value="$PROJECT_DIR$/web/phpjstest.html" />
-        <option value="$PROJECT_DIR$/web/php/test.php" />
         <option value="$PROJECT_DIR$/web/phpjstest.php" />
+        <option value="$PROJECT_DIR$/web/php/test.php" />
+        <option value="$PROJECT_DIR$/web/phpjsdisplaytest.php" />
       </list>
     </option>
   </component>
@@ -113,7 +133,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 7" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
+    <option name="x" value="8" />
+    <option name="y" value="32" />
     <option name="width" value="1366" />
     <option name="height" value="744" />
   </component>
@@ -132,6 +153,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -154,10 +179,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -167,6 +188,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -277,14 +303,16 @@
       <updated>1544294696592</updated>
       <workItem from="1544294698343" duration="1431000" />
       <workItem from="1544296550729" duration="12324000" />
+      <workItem from="1544312229090" duration="91000" />
+      <workItem from="1544312347404" duration="2690000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13755000" />
+    <option name="totallyTimeSpent" value="16536000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1366" height="744" extended-state="0" />
+    <frame x="8" y="32" width="1366" height="744" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -298,7 +326,7 @@
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14216478" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25378788" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26136363" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -327,6 +355,102 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/web/test.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1746">
+          <caret line="97" column="5" lean-forward="false" selection-start-line="84" selection-start-column="4" selection-end-line="97" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/sync.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/php/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="46" column="25" lean-forward="false" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/phpjstest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1278">
+          <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/test.html.save">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1746">
+          <caret line="97" column="5" lean-forward="false" selection-start-line="84" selection-start-column="4" selection-end-line="97" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/sync.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/php/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="46" column="25" lean-forward="true" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/test.html.save">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/phpjstest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="68" column="32" lean-forward="false" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/test.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
@@ -341,14 +465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="46" column="25" lean-forward="true" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/sync.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -359,28 +475,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="97" column="5" lean-forward="true" selection-start-line="84" selection-start-column="4" selection-end-line="97" selection-end-column="5" />
+        <state relative-caret-position="1746">
+          <caret line="97" column="5" lean-forward="false" selection-start-line="84" selection-start-column="4" selection-end-line="97" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/php/test.php">
+    <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        <state relative-caret-position="195">
+          <caret line="46" column="25" lean-forward="false" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/phpjstest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="68" column="32" lean-forward="false" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
-          <folding>
-            <marker date="1544311502790" expanded="true" signature="99:152" ph="..." />
-            <marker date="1544311502790" expanded="true" signature="106:152" ph="..." />
-          </folding>
+        <state relative-caret-position="1458">
+          <caret line="81" column="36" lean-forward="true" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/php/test2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/php/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/phpjsdisplaytest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="32" column="58" lean-forward="true" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
+          <folding />
         </state>
       </provider>
     </entry>

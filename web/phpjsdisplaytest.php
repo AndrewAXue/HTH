@@ -1,4 +1,14 @@
+<?php
+$displaying = false;
+$coordinates = null;
+if (!empty($_GET["json"])) {
+     $coordinates = $_GET["json"];
+     $displaying = true;
 
+
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,9 +79,10 @@
     </div>
 
 
-</center>
-</form>
 
+</form>
+<p id="testing">testing 123</p>
+</center>
 <div id="map"></div>
 <script>
     var map;
@@ -85,12 +96,17 @@
         });
 
 
-        for (i = 0; i< 5;i++)
+        var array = '<?php echo $coordinates ?>';
+        var obj = JSON.parse(array);
+
+
+        for (i = 0; i< obj.length;i++)
         {
+            var markerLocation = new google.maps.LatLng(parseFloat(obj[i][1]),parseFloat(obj[i][0]));
 
 
             var marker = new google.maps.Marker({
-                position: hamilton,
+                position: markerLocation,
                 map: map,
                 title: "test"
             });
