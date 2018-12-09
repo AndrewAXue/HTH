@@ -4,6 +4,7 @@ $coordinates = null;
 $showHospitals = $_GET["showHospitals"];
 $showSchools = $_GET["showSchools"];
 $showLibraries = $_GET["showLibraries"];
+$showCommunityCentres = $_GET["showCommunityCentres"];
 
 
 if (!empty($_GET["json"])) {
@@ -121,7 +122,10 @@ if (!empty($_GET["json"])) {
                 var marker = new google.maps.Marker({
                     position: markerLocation,
                     map: map,
-                    title: 'Click for more details'
+                    title: 'Click for more details',
+                    icon: {
+                        url: "https://kaveenk.me/hth/images/hospitalicon.png"
+                    }
                 });
                 var infowindow = new google.maps.InfoWindow();
                 var content = "<center><b>" + String(hospitalsobj[i][0][0]) + "</b><br>" + String(hospitalsobj[i][0][1]) + "</center>";
@@ -144,7 +148,10 @@ if (!empty($_GET["json"])) {
                 var marker = new google.maps.Marker({
                     position: markerLocation,
                     map: map,
-                    title: 'Click for more details'
+                    title: 'Click for more details',
+                    icon: {
+                        url: "https://kaveenk.me/hth/images/schoolicon.png"
+                    }
                 });
                 var infowindow = new google.maps.InfoWindow();
                 var content = "<center><b>" + String(schoolsobj[i][0][0]) + "</b><br>" + String(schoolsobj[i][0][1]) + "</center>";
@@ -166,10 +173,38 @@ if (!empty($_GET["json"])) {
                 var marker = new google.maps.Marker({
                     position: markerLocation,
                     map: map,
-                    title: 'Click for more details'
+                    title: 'Click for more details',
+                    icon: {
+                        url: "https://kaveenk.me/hth/images/libraryicon.png"
+                    }
                 });
                 var infowindow = new google.maps.InfoWindow();
                 var content = "<center><b>" + String(librariesobj[i][0][0]) + "</b><br>" + String(librariesobj[i][0][1]) + "</center>";
+                google.maps.event.addListener(marker, 'click', function (content) {
+                    return function () {
+                        infowindow.setContent(content);
+                        infowindow.open(map, this);
+                    }
+                }(content));
+
+            }
+        }
+        if (findGetParameter("showCommunityCentres") == "true") {
+            var ccsobj = JSON.parse('[[["North Wentworth Community Centre", ""], ["43.31294721249394", "-79.92254634666881"]], [["Ancaster Old Town Hall", ""], ["43.22551230439663", "-79.97626454359411"]], [["Ryerson Recreation Centre", ""], ["43.25381278788129", "-79.88235644210206"]], [["Sealey Park Scout Hall", ""], ["43.330815209686776", "-79.88922044290048"]], [["Sheffield Community Hall", ""], ["43.29704067583658", "-80.2007439892497"]], [["Sir Allan Macnab Recreation Centre", ""], ["43.23107007362862", "-79.92168665738289"]], [["Sir Wilfrid Laurier Recreation Centre", ""], ["43.21781710413284", "-79.78676166429753"]], [["Sir Winston Churchill Recreation Centre", ""], ["43.23755850040588", "-79.79571433973884"]], [["Stoney Creek Optomist Community Centre", ""], ["43.22574089364487", "-79.7585276868391"]], [["Redeemer Sports Complex", ""], ["43.212106303957334", "-79.95200162372063"]], [["Ancaster Senior Achievement Centre (Asac)", ""], ["43.18453817547859", "-80.07058372095855"]], [["Valens Community Hall", ""], ["43.3828622273035", "-80.13089848389335"]], [["Valley Community Centre (Nigel Charlong)", ""], ["43.30166070386504", "-79.90846575272751"]], [["Valley Park Rec Centre", ""], ["43.19290423842806", "-79.79810583569792"]], [["Waterdown Memorial Hall", ""], ["43.33408713218786", "-79.89259153018527"]], [["Westmount Recreation Centre", ""], ["43.228372662169384", "-79.89431613007507"]], [["Winona Scout Hall", ""], ["43.20969529946014", "-79.64564256677153"]], [["Winona Senior Citizen Centre", ""], ["43.20874438631364", "-79.65308486860114"]], [["Woodburn Centennial Hall", ""], ["43.14656890666839", "-79.74280634128291"]], [["Ymca - Hamilton Downtown Family", ""], ["43.25432327073405", "-79.86988423359848"]], [["Mountsberg Hall", ""], ["43.434226463128375", "-80.04209171656004"]], [["Sackville Hill Seniors Centre", ""], ["43.22447690512324", "-79.86260426592914"]], [["Spring Valley Community Centre", ""], ["43.21714491028943", "-79.99783953126015"]], [["Dominic Agostino Riverdale Community Centre", ""], ["43.23251479104158", "-79.756767354129"]], [["Ymca - Flamborough Family", ""], ["43.33428595880552", "-79.91227132361688"]], [["Ywca - Hamilton Family - Macnab St", ""], ["43.25423089450302", "-79.87156481014803"]], [["Soccer World", ""], ["43.25721965032598", "-79.89413985271617"]], [["Mountain Sports Complex", ""], ["43.19887195088654", "-79.83707186564129"]], [["Players Paradise Sports Complex", ""], ["43.23107027746398", "-79.70248013367576"]], [["Lakeland Centre", ""], ["43.26209559259145", "-79.76832327735099"]], [["Stoney Creek Recreation Centre", ""], ["43.21763050596098", "-79.76306024563874"]], [["David Braley Athletic Centre", ""], ["43.26504364332839", "-79.91616538953649"]], [["Norman Pinky Lewis Recreation Centre", ""], ["43.2570466916642", "-79.8453080697163"]], [["Bernie Morelli Recreation Centre", ""], ["43.2500471102715", "-79.82997442217562"]], [["F.h. Sherman Recreation And Learning Centre", ""], ["43.19518010885993", "-79.75400703666024"]], [["Ymca - Les Chater Family", ""], ["43.19836189255679", "-79.87804501322543"]], [["Main Hess Senior Centre", ""], ["43.256036876963414", "-79.87764732839432"]], [["Ancaster Aquatic Centre", ""], ["43.21516879926916", "-80.00628298385762"]], [["Ancaster Rotary Centre", ""], ["43.21807224775518", "-80.0077893378293"]], [["Beasley Community Centre", ""], ["43.25805134334364", "-79.86178273189563"]], [["Bennetto Community Centre", ""], ["43.27008976581619", "-79.86093697441686"]], [["Beverly Community Centre", ""], ["43.29867640239487", "-80.1112781832198"]], [["Beverly Township Hall", ""], ["43.30047207385531", "-80.12663304435652"]], [["Binbrook Memorial Hall", ""], ["43.12300553296204", "-79.80403784665256"]], [["H.g. Brewster Pool", ""], ["43.21809991331717", "-79.71154333898465"]], [["Carlisle Community Centre", ""], ["43.3967784957488", "-79.98131996136647"]], [["Carlisle Memorial Hall", ""], ["43.3939428969837", "-79.98147985959972"]], [["Carluke Hall", ""], ["43.14540747545268", "-79.98547541389685"]], [["Central Memorial Recreation Centre", ""], ["43.249543290799735", "-79.85924282307775"]], [["Ada Bland Club 60 Senior Citizen Centre", ""], ["43.21735503732258", "-79.75834235741497"]], [["Dalewood Recreation Centre", ""], ["43.25836394938631", "-79.91315458049925"]], [["Dundas Community Pool", ""], ["43.26547442719099", "-79.96355632580912"]], [["Dundas Lions Memorial Community Centre", ""], ["43.267379056336324", "-79.96359359748914"]], [["Eastmount Community Centre", ""], ["43.23643371677038", "-79.84866004372734"]], [["Fruitland Lions Community Hall", ""], ["43.218536638069104", "-79.7045989964928"]], [["Glanbrook Arena & Auditorium", ""], ["43.13002607003663", "-79.83872096757962"]], [["Greensville Hall", ""], ["43.27684613337756", "-79.98836483627639"]], [["Ywca - Hamilton Family - Ottawa St", ""], ["43.24396148093369", "-79.81884626364793"]], [["Hill Park Recreation Centre", ""], ["43.22781850541992", "-79.86312510821163"]], [["Huntington Park Recreation Centre", ""], ["43.220747228388596", "-79.82939338728264"]], [["Jimmy Thompson Pool", ""], ["43.24939123299326", "-79.83025856294296"]], [["East Kiwanis Boys & Girls Club", ""], ["43.24855414547234", "-79.81073838642523"]], [["Kiwanis Community Centre", ""], ["43.213481500939245", "-79.69127601122061"]], [["Ancaster Lions Outdoor Pool", ""], ["43.21823249987303", "-79.99969967261036"]], [["Lynden Community Centre", ""], ["43.22657985948866", "-80.14621041535916"]], [["Millgrove Community Centre", ""], ["43.33515359398153", "-79.95942802610175"]], [["Mount Hope Community Hall/youth Centre", ""], ["43.16022469219231", "-79.91142878213512"]], [["Eva Rothwell Resource Centre", ""], ["43.26494955083168", "-79.84286448991884"]]]');
+            for (i = 0; i < ccsobj.length; i++) {
+                var markerLocation = new google.maps.LatLng(parseFloat(ccsobj[i][1][0]), parseFloat(ccsobj[i][1][1]));
+
+
+                var marker = new google.maps.Marker({
+                    position: markerLocation,
+                    map: map,
+                    title: 'Click for more details',
+                    icon: {
+                        url: "https://kaveenk.me/hth/images/communitycentreicon.png"
+                    }
+                });
+                var infowindow = new google.maps.InfoWindow();
+                var content = "<center><b>" + String(ccsobj[i][0][0]) + "</b><br>" + String(ccsobj[i][0][1]) + "</center>";
                 google.maps.event.addListener(marker, 'click', function (content) {
                     return function () {
                         infowindow.setContent(content);

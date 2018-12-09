@@ -4,6 +4,7 @@ $coordinates = null;
 $showHospitals = $_GET["showHospitals"];
 $showSchools = $_GET["showSchools"];
 $showLibraries = $_GET["showLibraries"];
+$showCommunityCentres = $_GET["showCommunityCentres"];
 
 if (!empty($_GET["json"])) {
     $coordinates = $_GET["json"];
@@ -78,6 +79,14 @@ if (!empty($_GET["json"])) {
 
                     </div>
                     <div>
+                        <label for="communitycentrespriority">Community Centre Priority</label>
+                        <input style="width: 100%;" value= <?php
+                        echo (int)$_GET["communitycentrespriority"];
+                        ?> type="range" id="communitycentrespriority" name="communitycentrespriority"
+                               min="0" max="10">
+
+                    </div>
+                    <div>
                         <label for="k_value">K Value</label>
 
                         <input type="number" default=1 value=<?php
@@ -91,9 +100,13 @@ if (!empty($_GET["json"])) {
                     Show Schools: <input type="checkbox" name="showSchools" id="showschools"
                                          value="true" <?php if ($_GET["showSchools"] == "true") {
                         echo "checked";
-                    } ?> >
+                    } ?> ><br>
                     Show Libraries: <input type="checkbox" name="showLibraries" id="showlibraries"
                                            value="true" <?php if ($_GET["showLibraries"] == "true") {
+                        echo "checked";
+                    } ?> >
+                    Show Community Centres: <input type="checkbox" name="showCommunityCentres" id="showcommunitycentres"
+                                           value="true" <?php if ($_GET["showCommunityCentres"] == "true") {
                         echo "checked";
                     } ?> >
                     <br><input type="submit" value="Submit">
@@ -106,7 +119,7 @@ if (!empty($_GET["json"])) {
             <?php
 
             if ($displaying == true) {
-                $url = "https://kaveenk.me/hth/innerdisplay.php?json=" . $coordinates . "&showHospitals=" . $showHospitals . "&showSchools=" . $showSchools . "&showLibraries=" . $showLibraries;
+                $url = "https://kaveenk.me/hth/innerdisplay.php?json=" . $coordinates . "&showHospitals=" . $showHospitals . "&showSchools=" . $showSchools . "&showLibraries=" . $showLibraries."&showCommunityCentres=".$showCommunityCentres;
                 echo "<iframe width='820' height='600' src='" . $url . "'</iframe>";
             } else {
                 echo "<iframe width='820' height='600' src='https://kaveenk.me/hth/innerdisplay.php'</iframe>";
