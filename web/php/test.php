@@ -1,6 +1,7 @@
 <?php
 
-
+$showHospitals = $_GET["showHospitals"];
+$showSchools = $_GET["showSchools"];
 
 
 $array = array('k_num'=>(int) $_GET["k_val"],'poi'=> array('school'=>(int) $_GET["schoolpriority"],'hospital'=>(int) $_GET["hospitalpriority"]));
@@ -12,7 +13,7 @@ $resArr = json_decode($response);
 $resArrEncoded = json_encode($resArr);
 echo $resArrEncoded;
 
-header("Location: https://kaveenk.me/hth/phpjsdisplaytest.php?json=".$resArrEncoded);
+header("Location: https://kaveenk.me/hth/testframedisplay.php?json=".$resArrEncoded."&showHospitals=".$showHospitals."&k_val=".$_GET["k_val"]."&schoolpriority=".$_GET["schoolpriority"]."&hospitalpriority=".$_GET["hospitalpriority"]."&showSchools=".$showSchools);
 
 
 function send($url,$message)
