@@ -20,7 +20,7 @@ $resArr = json_decode($response);
 $resArrEncoded = json_encode($resArr);
 echo $resArrEncoded;
 
-header("Location: https://kaveenk.me/hth/testframedisplay.php?json=" . $resArrEncoded . "&showHospitals=" . $showHospitals . "&k_val=" . $_GET["k_val"] . "&schoolpriority=" . $_GET["schoolpriority"] . "&hospitalpriority=" . $_GET["hospitalpriority"] . "&showSchools=" . $showSchools . "&librarypriority=" . $_GET["librarypriority"] . "&showLibraries=" . $showLibraries."&communitycentrespriority=".$_GET["communitycentrespriority"]."&showCommunityCentres=".$showCommunityCentres);
+header("Location: https://kaveenk.me/hth/index.php?json=" . $resArrEncoded . "&showHospitals=" . $showHospitals . "&k_val=" . $_GET["k_val"] . "&schoolpriority=" . $_GET["schoolpriority"] . "&hospitalpriority=" . $_GET["hospitalpriority"] . "&showSchools=" . $showSchools . "&librarypriority=" . $_GET["librarypriority"] . "&showLibraries=" . $showLibraries."&communitycentrespriority=".$_GET["communitycentrespriority"]."&showCommunityCentres=".$showCommunityCentres);
 
 
 function send($url, $message)
