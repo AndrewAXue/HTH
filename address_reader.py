@@ -2,6 +2,7 @@ from collections import namedtuple
 import json
 import requests
 from algo import kmeans
+from clean_data import cleaning
 
 institution_map = {'home': 'https://opendata.arcgis.com/datasets/ac6fc684043341f6b1d6298c146a0bcf_1.geojson',
                'school': 'https://opendata.arcgis.com/datasets/cccae6f029334927856da6e20a50561f_19.geojson',

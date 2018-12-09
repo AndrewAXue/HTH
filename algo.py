@@ -7,7 +7,7 @@ def dist(point1, point2):
         (point1[0] - point2[0]) * (point1[0] - point2[0]) + (point1[1] - point2[1]) * (point1[1] - point2[1]))
 
 
-def kmeans(k: int, poi: dict, data_points: list, patience: int = 10):
+def kmeans(k: int, poi: dict, data_points: list, patience: int = 20):
     addresses = []
     k_points = []  # long/lat of the k points
     min_lat = 999999999
@@ -23,8 +23,14 @@ def kmeans(k: int, poi: dict, data_points: list, patience: int = 10):
             max_long = max(max_long, point.longitude)
     for i in range(k):
         k_points.append([uniform(min_long, max_long), uniform(min_lat, max_lat)])
+    #for i, init_point in enumerate(data_points):
+    #    if k == i: break
+    #    k_points.append([init_point.longitude, init_point.latitude])
     for i in range(patience):
         print(f'current k points {k_points}')
+        worst_point_ind = 0
+        worst_point_dist = 0
+        number_distribution = []
         for point in addresses:
             idx = 0  # which k cluster is it closest to
             min_dist = 100000
@@ -32,6 +38,8 @@ def kmeans(k: int, poi: dict, data_points: list, patience: int = 10):
                 if dist(point, value) < min_dist:
                     min_dist = dist(point, value)
                     idx = index
+            if min_dist > worst_point_dist:
+                worst_point_ind = index
             point[2] = idx
         for idx, value in enumerate(k_points):
             sumx = 0
@@ -42,6 +50,12 @@ def kmeans(k: int, poi: dict, data_points: list, patience: int = 10):
                     num_points += 1
                     sumx += addy[1]
                     sumy += addy[0]
-            value[0] = sumy / num_points
-            value[1] = sumx / num_points
+            number_distribution.append(num_points)
+            if num_points == 0:
+                value[0] = addresses[worst_point_ind][0]
+                value[1] = addresses[worst_point_ind][1]
+            else:
+                value[0] = sumy / num_points
+                value[1] = sumx / num_points
+        print(number_distribution)
     return k_points
