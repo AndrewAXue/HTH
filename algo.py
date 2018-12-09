@@ -9,6 +9,7 @@ def dist(point1, point2):
 
 def kmeans(k: int, poi: dict, data_points: list, patience: int = 20):
     addresses = []
+    address_dist = []
     k_points = []  # long/lat of the k points
     prev_pop = []
     min_lat = 999999999
@@ -30,18 +31,17 @@ def kmeans(k: int, poi: dict, data_points: list, patience: int = 20):
     for i in range(patience):
         #print(f'current k points {k_points}')
         worst_point_ind = 0
-        worst_point_dist = 0
         number_distribution = []
-        for point in addresses:
+        for i, point in enumerate(addresses):
             idx = 0  # which k cluster is it closest to
             min_dist = 100000
             for index, value in enumerate(k_points):
                 if dist(point, value) < min_dist:
                     min_dist = dist(point, value)
                     idx = index
-            if min_dist > worst_point_dist:
-                worst_point_ind = idx
             point[2] = idx
+            address_dist.append([min_dist, i])
+        address_dist.sort(key=lambda x: x[0], reverse=True)
         for idx, value in enumerate(k_points):
             sumx = 0
             sumy = 0
@@ -53,8 +53,10 @@ def kmeans(k: int, poi: dict, data_points: list, patience: int = 20):
                     sumy += addy[0]
             number_distribution.append(num_points)
             if num_points == 0:
-                value[0] = addresses[worst_point_ind][0]
-                value[1] = addresses[worst_point_ind][1]
+                while (worst_point_ind != 0 and addresses[worst_point_ind] == addresses[worst_point_ind - 1]): worst_point_ind += 1
+                value[0] = addresses[address_dist[worst_point_ind][1]][0]
+                value[1] = addresses[address_dist[worst_point_ind][1]][1]
+                worst_point_ind += 1
             else:
                 value[0] = sumy / num_points
                 value[1] = sumx / num_points
