@@ -108,14 +108,18 @@ if (!empty($_GET["json"])) {
             var marker = new google.maps.Marker({
                 position: markerLocation,
                 map: map,
-                title: "test"
+                title: "test",
+                icon: {
+                    url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"                          }
+
             });
         }
 
         var hospitalsobj = JSON.parse("[[43.240102736704635, -79.84658516395245], [43.238561228664494, -79.91710035478114], [43.26194143120613, -79.85433161542542], [43.24013072756382, -79.84500442878306], [43.25961289621226, -79.91762702390393], [43.248604890980836, -79.87092405415079], [43.24475398423596, -79.83686635075972], [43.24233812377529, -79.88312181245138], [43.22172114705383, -79.77384588448024]]");
-        for (i = 0; i< obj.length;i++)
+        document.getElementById("testing").innerHTML = hospitalsobj;
+        for (i = 0; i< hospitalsobj.length;i++)
         {
-            var markerLocation = new google.maps.LatLng(parseFloat(hospitalsobj[i][1]),parseFloat(hospitalsobj[i][0]));
+            var markerLocation = new google.maps.LatLng(parseFloat(hospitalsobj[i][0]),parseFloat(hospitalsobj[i][1]));
 
 
             var marker = new google.maps.Marker({
