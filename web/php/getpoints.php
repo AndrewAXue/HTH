@@ -4,13 +4,14 @@ $showHospitals = $_GET["showHospitals"];
 $showSchools = $_GET["showSchools"];
 $showLibraries = $_GET["showLibraries"];
 $showCommunityCentres = $_GET["showCommunityCentres"];
+$showTourismPOI = $_GET["showTourismPOI"];
 
-if ((int)$_GET["schoolpriority"] + (int)$_GET["librarypriority"] + (int)$_GET["hospitalpriority"] + (int)$_GET["communitycentrespriority"] == 0) {
-    $array = array('k_num' => (int)$_GET["k_val"], 'poi' => array('school' => 1, 'hospital' => 1, 'libraries' => 1, 'community_centres'=>1));
+if ((int)$_GET["schoolpriority"] + (int)$_GET["librarypriority"] + (int)$_GET["hospitalpriority"] + (int)$_GET["communitycentrespriority"] + (int)$_GET["tourismpoipriority"] == 0) {
+    $array = array('k_num' => (int)$_GET["k_val"], 'poi' => array('school' => 1, 'hospital' => 1, 'libraries' => 1, 'community_centres'=>1,'tourism_poi'=>1));
 } else {
 
 
-    $array = array('k_num' => (int)$_GET["k_val"], 'poi' => array('school' => (int)$_GET["schoolpriority"], 'hospital' => (int)$_GET["hospitalpriority"], 'libraries' => (int)$_GET["librarypriority"],'community_centres' => (int)$_GET["communitycentrespriority"]));
+    $array = array('k_num' => (int)$_GET["k_val"], 'poi' => array('school' => (int)$_GET["schoolpriority"], 'hospital' => (int)$_GET["hospitalpriority"], 'libraries' => (int)$_GET["librarypriority"],'community_centres' => (int)$_GET["communitycentrespriority"],'tourism_poi'=>(int)$_GET["tourismpoipriority"]));
 }
 $craftedmessage = json_encode($array);
 $response = send("localhost:5216", $craftedmessage);
@@ -20,7 +21,7 @@ $resArr = json_decode($response);
 $resArrEncoded = json_encode($resArr);
 echo $resArrEncoded;
 
-header("Location: https://kaveenk.me/hth/index.php?json=" . $resArrEncoded . "&showHospitals=" . $showHospitals . "&k_val=" . $_GET["k_val"] . "&schoolpriority=" . $_GET["schoolpriority"] . "&hospitalpriority=" . $_GET["hospitalpriority"] . "&showSchools=" . $showSchools . "&librarypriority=" . $_GET["librarypriority"] . "&showLibraries=" . $showLibraries."&communitycentrespriority=".$_GET["communitycentrespriority"]."&showCommunityCentres=".$showCommunityCentres);
+header("Location: https://kaveenk.me/hth/index.php?json=" . $resArrEncoded . "&showHospitals=" . $showHospitals . "&k_val=" . $_GET["k_val"] . "&schoolpriority=" . $_GET["schoolpriority"] . "&hospitalpriority=" . $_GET["hospitalpriority"] . "&showSchools=" . $showSchools . "&librarypriority=" . $_GET["librarypriority"] . "&showLibraries=" . $showLibraries."&communitycentrespriority=".$_GET["communitycentrespriority"]."&showCommunityCentres=".$showCommunityCentres."&tourismpoipriority=".$_GET["tourismpoipriority"]."&showTourismPOI=".$showTourismPOI);
 
 
 function send($url, $message)

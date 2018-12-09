@@ -5,6 +5,7 @@ $showHospitals = $_GET["showHospitals"];
 $showSchools = $_GET["showSchools"];
 $showLibraries = $_GET["showLibraries"];
 $showCommunityCentres = $_GET["showCommunityCentres"];
+$showTourismPOI = $_GET["showTourismPOI"];
 
 if (!empty($_GET["json"])) {
     $coordinates = $_GET["json"];
@@ -114,7 +115,18 @@ if (!empty($_GET["json"])) {
                                    min="0" max="10">
 
                         </div>
+                        <div>
+                            <label for="tourismpoipriority">Tourism & Entertainment Priority</label>
+                            <input style="width: 100%;" value= <?php
+                            echo (int)$_GET["tourismpoipriority"];
+                            ?> type="range" id="tourismpoipriority" name="tourismpoipriority"
+                                   min="0" max="10">
+
+                        </div>
+
+
                     </div>
+
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-6">
 
@@ -165,8 +177,14 @@ if (!empty($_GET["json"])) {
                                     echo "checked";
                                 } ?> >
                                 <br>
+                                Show Entertainment: <input type="checkbox" name="showTourismPOI" id="showtourismpoi"
+                                                               value="true" <?php if ($_GET["showTourismPOI"] == "true") {
+                                    echo "checked";
+                                } ?> >
 
                             </div>
+                            <br>
+                        </div>
                             <input class="btn2" type="submit" value="Get Locations">
             </center>
         </form>
@@ -180,7 +198,7 @@ if (!empty($_GET["json"])) {
                     <?php
 
                     if ($displaying == true) {
-                        $url = "https://kaveenk.me/hth/innerdisplay.php?json=" . $coordinates . "&showHospitals=" . $showHospitals . "&showSchools=" . $showSchools . "&showLibraries=" . $showLibraries."&showCommunityCentres=".$showCommunityCentres;
+                        $url = "https://kaveenk.me/hth/innerdisplay.php?json=" . $coordinates . "&showHospitals=" . $showHospitals . "&showSchools=" . $showSchools . "&showLibraries=" . $showLibraries."&showCommunityCentres=".$showCommunityCentres."&showTourismPOI=".$showTourismPOI;
                         echo "<iframe frameborder='0' width='1100' height='600' src='" . $url . "'></iframe>";
                     } else {
                         echo "<iframe frameborder='0' width='1100' height='600' src='https://kaveenk.me/hth2/innerdisplay.php'></iframe>";
@@ -275,7 +293,7 @@ if (!empty($_GET["json"])) {
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="footer-copy">
-                    <p>Designed for UrbanHacks 2018</p>
+                    <p>Designed for UrbanHacks 2018 by Kaveen Kumarasinghe, Andrew Xue, Alex Xue, and Shawn Cameron</p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
