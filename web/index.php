@@ -17,119 +17,434 @@ if (!empty($_GET["json"])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <!-- Basic Page Needs
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8">
-    <title>Location Optimizer</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- Mobile Specific Metas
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="One Page Corporate HTML Template">
+    <meta name="author" content="">
+    <link rel="icon" href="https://arizonachristian.edu/wp-content/uploads/2017/06/logo-placeholder.png">
 
-    <!-- FONT
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <!-- Title -->
+    <title>NAME - SLOGAN</title>
 
-    <!-- CSS
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/skeleton.css">
+    <!-- Necessary CSS Files -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">	 	<!-- Google Font -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap  -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Template Main css  -->
+    <link href="css/jquery.bxslider.css" rel="stylesheet">
+    <!-- Client Logo Slider  -->
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+    <!-- Testimonial Slider -->
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+    <!-- Testimonial Slider -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css" media="screen">
+    <!-- Video Popup -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Wow Animation CSS -->
 
-    <!-- Favicon
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!--RESPONSIVE TAB -->
+    <link rel="stylesheet" type="text/css" href="css/easy-responsive-tabs.css">
 
 </head>
 <body>
-
-<!-- Primary Page Layout
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<div class="container">
-    <div class="row">
-        <div class="four columns" style="margin-top: 3%">
-            <center><h4><b>Location Optimizer</b></h4>
-                <form method="GET" action="php/getpoints.php">
-
-                    <div>
-                        <label for="schoolpriority">School Priority</label>
-                        <input style="width: 100%;" value=<?php
-                        echo (int)$_GET["schoolpriority"];
-
-                        ?> type="range" id="schoolpriority" name="schoolpriority"
-                               min="0" max="10">
+<div class="se-pre-con"></div>
+<!-- header -->
+<div class="header" id="header">
+    <div class="container">
+        <div class="row header-top" data-spy="affix" data-offset-top="70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3">
+                        <div class="logo"><a href="#"><img height="50"
+                                                           src="https://360taxsolutions.com/wp-content/uploads/2017/11/placeholder-sample-logo.png"
+                                                           alt="logo"></a></div>
+                        <div id="menu-icon"><span></span><span></span><span></span></div>
+                        <div class="clear"></div>
 
                     </div>
-                    <div>
-                        <label for="hospitalpriority">Hospital Priority</label>
-                        <input style="width: 100%;" value= <?php
-                        echo (int)$_GET["hospitalpriority"];
-                        ?> type="range" id="hospitalpriority" name="hospitalpriority"
-                               min="0" max="10">
+                    <div class="col-lg-9 col-md-9" id="menu">
+                        <div class="menu">
+                            <ul>
+                                <li><a href="#header">Home</a></li>
+                                <li><a href="#features">How To Use</a></li>
 
+
+                            </ul>
+                        </div>
                     </div>
-                    <div>
-                        <label for="librarypriority">Library Priority</label>
-                        <input style="width: 100%;" value= <?php
-                        echo (int)$_GET["librarypriority"];
-                        ?> type="range" id="librarypriority" name="librarypriority"
-                               min="0" max="10">
+                </div>
+            </div>
 
-                    </div>
-                    <div>
-                        <label for="communitycentrespriority">Community Centre Priority</label>
-                        <input style="width: 100%;" value= <?php
-                        echo (int)$_GET["communitycentrespriority"];
-                        ?> type="range" id="communitycentrespriority" name="communitycentrespriority"
-                               min="0" max="10">
-
-                    </div>
-                    <div>
-                        <label for="k_value">K Value</label>
-
-                        <input type="number" default=1 value=<?php
-                        echo (int)$_GET["k_val"];
-                        ?> id="kval" name="k_val"
-                               min="1" max="10"></div>
-                    Show Hospitals: <input type="checkbox" name="showHospitals" id="showhospitals"
-                                           value="true" <?php if ($_GET["showHospitals"] == "true") {
-                        echo "checked";
-                    } ?> >
-                    Show Schools: <input type="checkbox" name="showSchools" id="showschools"
-                                         value="true" <?php if ($_GET["showSchools"] == "true") {
-                        echo "checked";
-                    } ?> ><br>
-                    Show Libraries: <input type="checkbox" name="showLibraries" id="showlibraries"
-                                           value="true" <?php if ($_GET["showLibraries"] == "true") {
-                        echo "checked";
-                    } ?> ><br>
-                    Show Community Centres: <input type="checkbox" name="showCommunityCentres" id="showcommunitycentres"
-                                           value="true" <?php if ($_GET["showCommunityCentres"] == "true") {
-                        echo "checked";
-                    } ?> >
-                    <br><input type="submit" value="Submit">
-
-
-                </form>
-            </center>
         </div>
-        <div class="eight columns" style="margin-top:3%">
-            <?php
 
-            if ($displaying == true) {
-                $url = "https://kaveenk.me/hth/innerdisplay.php?json=" . $coordinates . "&showHospitals=" . $showHospitals . "&showSchools=" . $showSchools . "&showLibraries=" . $showLibraries."&showCommunityCentres=".$showCommunityCentres;
-                echo "<iframe width='820' height='590' src='" . $url . "'</iframe>";
-            } else {
-                echo "<iframe width='820' height='590' src='https://kaveenk.me/hth/innerdisplay.php'</iframe>";
-            }
-            ?>
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="wow fadeInDown">Location Optimization</h1>
+                <p class="wow fadeInDown">Find the perfect location(s) given your requrements. Please enter your
+                    constraints below</p>
+                <br>
+
+            </div>
+        </div>
+
+
+        <form method="GET" action="php/getpoints.php">
+            <center>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+
+
+                        <div>
+                            <label for="schoolpriority">School Priority</label>
+                            <input style="width: 100%;" value=<?php
+                            echo (int)$_GET["schoolpriority"];
+
+                            ?> type="range" id="schoolpriority" name="schoolpriority"
+                                   min="0" max="10">
+
+                        </div>
+                        <div>
+                            <label for="hospitalpriority">Hospital Priority</label>
+                            <input style="width: 100%;" value= <?php
+                            echo (int)$_GET["hospitalpriority"];
+                            ?> type="range" id="hospitalpriority" name="hospitalpriority"
+                                   min="0" max="10">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+
+
+                            <div>
+                                <label for="librarypriority">Library Priority</label>
+                                <input style="width: 100%;" value= <?php
+                                echo (int)$_GET["librarypriority"];
+                                ?> type="range" id="librarypriority" name="librarypriority"
+                                       min="0" max="10">
+
+                            </div>
+                            <div>
+                                <label for="communitycentrespriority">Community Centre Priority</label>
+                                <input style="width: 100%;" value= <?php
+                                echo (int)$_GET["communitycentrespriority"];
+                                ?> type="range" id="communitycentrespriority" name="communitycentrespriority"
+                                       min="0" max="10">
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+
+
+                                <div>
+                                    <label for="k_value">Number of Results: </label>
+
+                                    <input type="number" default=1 value= <?php
+                                    echo (int)$_GET["k_val"];
+                                    ?> id="kval" name="k_val"
+                                           min="1" max="10"></div>
+
+                                Show Hospitals: <input type="checkbox" name="showHospitals" id="showhospitals"
+                                                       value="true" <?php if ($_GET["showHospitals"] == "true") {
+                                    echo "checked";
+                                } ?> ><br>
+                                Show Schools: <input type="checkbox" name="showSchools" id="showschools"
+                                                     value="true" <?php if ($_GET["showSchools"] == "true") {
+                                    echo "checked";
+                                } ?> ><br>
+                                Show Libraries: <input type="checkbox" name="showLibraries" id="showlibraries"
+                                                       value="true" <?php if ($_GET["showLibraries"] == "true") {
+                                    echo "checked";
+                                } ?> ><br>
+                                Show Community Centres: <input type="checkbox" name="showCommunityCentres" id="showcommunitycentres"
+                                                               value="true" <?php if ($_GET["showCommunityCentres"] == "true") {
+                                    echo "checked";
+                                } ?> >
+                                <br>
+
+                            </div>
+                            <input class="btn2" type="submit" value="Get Locations">
+            </center>
+        </form>
+
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="toping wow fadeInUp">
+
+
+                    <?php
+
+                    if ($displaying == true) {
+                        $url = "https://kaveenk.me/hth/innerdisplay.php?json=" . $coordinates . "&showHospitals=" . $showHospitals . "&showSchools=" . $showSchools . "&showLibraries=" . $showLibraries."&showCommunityCentres=".$showCommunityCentres;
+                        echo "<iframe frameborder='0' width='1100' height='600' src='" . $url . "'></iframe>";
+                    } else {
+                        echo "<iframe frameborder='0' width='1100' height='600' src='https://kaveenk.me/hth2/innerdisplay.php'></iframe>";
+                    }
+                    ?>
+
+
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<!-- header End-->
 
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- features -->
+<div class="section2 dark-section dark-color-bg" id="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="heading">
+                    <span>features</span>
+                    <h2>Best features ever</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6 module">
+                <div class="f-box wow fadeInUp" data-wow-duration="1s">
+                    <div class="f-img"><img src="images/icon1.png" alt="f1"></div>
+                    <a href="#">Friendly Admin</a>
+                    <p>Lorem Ipsum is simply dummy text the printing and typeseing industry Lorem Ipsum has
+                        been standard.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-6 module">
+                <div class="f-box wow fadeInUp" data-wow-duration="2s">
+                    <div class="f-img"><img src="images/icon2.png" alt="f2"></div>
+                    <a href="#">Well Documented</a>
+                    <p>Lorem Ipsum is simply dummy text the printing and typeseing industry Lorem Ipsum has
+                        been standard.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-6 module">
+                <div class="f-box wow fadeInUp" data-wow-duration="3s">
+                    <div class="f-img"><img src="images/icon3.png" alt="f3"></div>
+                    <a href="#">Highly Customizable</a>
+                    <p>Lorem Ipsum is simply dummy text the printing and typeseing industry Lorem Ipsum has
+                        been standard.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-6 module">
+                <div class="f-box wow fadeInUp" data-wow-duration="3s">
+                    <div class="f-img"><img src="images/icon4.png" alt="f4"></div>
+                    <a href="#">Free Download</a>
+                    <p>Lorem Ipsum is simply dummy text the printing and typeseing industry Lorem Ipsum has
+                        been standard.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-6 module">
+                <div class="f-box wow fadeInUp" data-wow-duration="3s">
+                    <div class="f-img"><img src="images/icon5.png" alt="f5"></div>
+                    <a href="#">Responsive Design</a>
+                    <p>Lorem Ipsum is simply dummy text the printing and typeseing industry Lorem Ipsum has
+                        been standard.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-6 module">
+                <div class="f-box wow fadeInUp" data-wow-duration="3s">
+                    <div class="f-img"><img src="images/icon6.png" alt="f6"></div>
+                    <a href="#">Secure</a>
+                    <p>Lorem Ipsum is simply dummy text the printing and typeseing industry Lorem Ipsum has
+                        been standard.</p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- features End-->
+
+
+<!-- footer-->
+
+<div class="last-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="footer-copy">
+                    <p>Designed for UrbanHacks 2018</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="foot-social">
+                    <a href="#"><i class="icofont icofont-social-facebook"></i></a>
+                    <a href="#"><i class="icofont icofont-social-twitter"></i></a>
+                    <a href="#"><i class="icofont icofont-social-google-plus"></i></a>
+                    <a href="#"><i class="icofont icofont-social-pinterest"></i></a>
+                    <a href="#"><i class="icofont icofont-social-youtube-play"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- footer End-->
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<!-- For screen gallery tab -->
+<script src="js/jquery.min.js"></script>                                                        <!-- librery -->
+<script src="js/bootstrap.min.js"></script>
+<!-- bootstrap -->
+<script src="js/jquery.bxslider.min.js"></script>
+<!-- For Logos Slider -->
+<script src="js/slick.js" type="text/javascript" charset="utf-8"></script>
+<!-- For Testimonial Slider -->
+<script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
+<!-- For Video Pop up -->
+<script type="text/javascript" src="js/modernizr.custom.53451.js"></script>
+<!-- For Screenshot Details -->
+<script type="text/javascript" src="js/jquery.gallery.js"></script>
+<!-- For Screenshot Details -->
+<script src="js/easyResponsiveTabs.js"></script>
+<!-- For screen gallery tab -->
+<script src="js/wow.min.js"></script>
+<!--Wow animation js -->
+
+<script src="js/retina.js"></script>                      <!-- Retina js -->
+<script src="js/retina.min.js"></script>                  <!-- Retina js -->
+
+<script>
+    $(document).ready(function () {
+
+        //Screenshot in details slider ==============================================
+
+        $(function () {
+            $('#dg-container').gallery();
+        });
+
+
+        //Testimonials slider ==============================================
+
+        $(".center").slick({
+            dots: true,
+            infinite: true,
+            centerMode: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 600,
+                    settings: {
+                        mobileFirst: true,
+                        slidesToShow: 1,
+                    }
+                }
+            ]
+        });
+
+        // Logo Slider ==============================================
+
+        $('.slider1').bxSlider({
+            slideWidth: 260,
+            minSlides: 2,
+            maxSlides: 4,
+            slideMargin: 10,
+        });
+
+
+        //Responsive Menu ==============================================
+
+        $("#menu-icon").click(function () {
+            $("#menu").slideToggle("slow");
+        });
+
+
+        // Video popup ==============================================
+
+        $(".various").fancybox({
+            type: "iframe", //<--added
+            maxWidth: 800,
+            maxHeight: 600,
+            fitToView: false,
+            width: '70%',
+            height: '70%',
+            autoSize: false,
+            closeClick: false,
+            openEffect: 'none',
+            closeEffect: 'none'
+        });
+
+
+        // Number Count for Our strong numbers ==============================================
+
+        $('.count').each(function () {
+            $(this).prop('Counter', 0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 4000,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+
+
+        // Scroll to Section ==============================================
+
+        $('a[href^="#"]').on('click', function (event) {
+            var target = $(this.getAttribute('href'));
+            if (target.length) {
+                event.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+            }
+        });
+    });
+
+
+    // Animate loader off screen ==============================================
+
+    $(window).load(function () {
+
+        $(".se-pre-con").fadeOut("slow");
+        ;
+    });
+
+
+    // Wow animation ==============================================
+    new WOW().init();
+
+
+    // screen gallery tab ==============================================
+
+    $(document).ready(function () {
+        //Horizontal Tab
+        $('#parentHorizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            tabidentify: 'hor_1', // The tab groups identifier
+            activate: function (event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+
+    });
+
+
+</script>
+
+
 </body>
 </html>

@@ -82,7 +82,7 @@ if (!empty($_GET["json"])) {
         var hamilton = {lat: 43.2557, lng: -79.8711};
 
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 11,
+            zoom: 12,
             center: hamilton
         });
 
