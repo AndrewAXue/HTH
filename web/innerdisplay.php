@@ -101,7 +101,7 @@ if (!empty($_GET["json"])) {
             var marker = new google.maps.Marker({
                 position: markerLocation,
                 map: map,
-                title: "test",
+                title: "Optimal Point",
                 icon: {
                     url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
                 }

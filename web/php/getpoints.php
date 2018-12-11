@@ -14,7 +14,7 @@ if ((int)$_GET["schoolpriority"] + (int)$_GET["librarypriority"] + (int)$_GET["h
     $array = array('k_num' => (int)$_GET["k_val"], 'poi' => array('school' => (int)$_GET["schoolpriority"], 'hospital' => (int)$_GET["hospitalpriority"], 'libraries' => (int)$_GET["librarypriority"],'community_centres' => (int)$_GET["communitycentrespriority"],'tourism_poi'=>(int)$_GET["tourismpoipriority"]));
 }
 $craftedmessage = json_encode($array);
-$response = send("localhost:5216", $craftedmessage);
+$response = send("35.231.54.245:5216", $craftedmessage);
 $resArr = array();
 $resArr = json_decode($response);
 //echo "<pre>"; print_r($resArr); echo "</pre>";
